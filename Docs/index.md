@@ -1,7 +1,7 @@
 # Title
-LTurner, 8.23.21
-Foundations of Programming: Python
-Assignment 07
+**LTurner, 8.23.21**    
+**Foundations of Programming: Python**   
+**Assignment 07**  
 
 
 ## Introduction
