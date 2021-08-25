@@ -22,7 +22,7 @@ than binary files due to the structure and detail that binary files must be writ
 A small error in a text file may cause a slight error, but a small error in a binary file can cause the file to not be usable.
 
 
-![Figure 1.](/docs/assets/css/Figure1.png)
+![Figure 1.](/assets/css/Figure1.png)
 
 Figure 1. Example of what a binary file looks like. 
 This example shows how much more difficult it is to read a binary file than a text file. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Binary_file))
