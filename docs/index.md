@@ -135,4 +135,45 @@ With information about the exception printed, it makes it easier to figure out w
 ![Figure 9.](/docs/assets/css/Figure9.png)
 
 Figure 9. Example of how to write the script to raise a custom exception based on if there is an issue with the input or variable.
+  
+There are several ways one can create custom errors. Above is a simple version of error handling, there are several other ways to write custom errors. Programwiz has a great article on how to step through the different methods for error handling (External Source [Programwiz](https://www.programiz.com/python-programming/user-defined-exception)). The Programwiz article also provides a lot of helpful information about what the script examples are trying to accomplish.  
+
+As we did in Figure 9, we are returning a simplified message back to the user. What wasn’t covered in Figure 9 example, was declaring the class for the exception. Python has many built in exception classes that can be used. An example of this is given in Figure 7. When a file is not found, it can’t be read, Python’s built-in error handling exception is “FileNotFoundError”. 
+
+To show how both built-in and custom error can work, I created an example. The example is a program to make a shopping list. I’m going to ask the user to an item to add to the shopping list and the quantity of the item. Now it’s time to figure out what error handling might be useful. I want the user to enter quantity as an integer. From the Python website, there is a list of built in exceptions and how they work (External Source [Python Exceptions](https://docs.python.org/3/library/exceptions.html#exception-hierarchy)). One the list there is a built-in error for ValueError. I can also write the code to ask for an integer input, and see what error message is given back, as seen in Figure 8. 
+
+The next error handling step I want to take, is to not let the user enter anything less than 1. When shopping we don’t normally return items once on the shopping list, and if items are on the list, we normally want at least 1 or more. To make sure the user enters an input for quantity larger than 1, I can create a custom error class and print my own output when that exception is raised in the try block. 
+
+In the below figure, the CustomError class is defined, and a custom message is printed. The second part of figure below, shows the try block. In the try block, the user enters a quantity that I have defined as an integer. If the input is an integer, the program then tests to make sure it’s less than 1. If it is less than 1, my CustomError is raised. If the user doesn’t enter an integer, the try block fails, and except script for ValueError runs and prints a message letting the user know not integer was entered. 
+
+![Figure 10.](/docs/assets/css/Figure10.png)
+  
+Figure 10. Examples of built-in (ValueError) and custom error handling script.
+
+The drawback from using the script in Figure 10 is that the script stops when it gets to the error. When a user is running the program, it’s inconvenient for the user to keep starting the file over when there is an issue. To help the program keep running a while loop can be used to make sure the user gets to try again till the input is no longer an issue.
+  
+![Figure 11.](/docs/assets/css/Figure11.png)
+
+Figure 11. Using a loop, try/except block, built-in error handling, and custom error handling. 
+This script asks the users for a quantity, checks it’s an integer and that’s between 1-10. 
+
+### Testing and Finding Potential Errors
+  
+The last part of custom error handling is to figure out what custom errors you need. One way to do this is to test your code and run in through all the options to see where the weakness lies. Also asking a friend to test your code is never a bad idea. Since they didn’t write it, sometimes it is easier for them to find the bugs. 
+
+The example I’m going to use is a shopping list. From previous information and assignments, we know how to make a list of tasks with priorities. A shopping list isn’t too different from that, just updating some of the code for it to make sense. I want to use pickling to read and write my list to a binary file. Since we want to change the list, I’m going to make an option to add and remove items. 
+The first part of my script reads data from a file. I can think of a few ideas of how this script could be broken. If the file isn’t a binary file, then I don’t want to save data to it for whatever reason. Second if the file doesn’t exist yet since I haven’t figured out what I need, then another error will be thrown since Python can’t read it. 
+
+For the file name, I could create a custom error for how the file ends and if it isn’t .dat loop the user until they enter a correct type. Reading a file that doesn’t exist is a built-in error handling exception called FileNotFoundError, as seen in Figure 7 and Figure 8. 
+
+The next spot for issues comes with user inputs. The user can enter whatever they want to, we have no control. To help the program be more robust, we can check the user input based on defined limits/controls, as seen in the last section. I could also look at limiting the inputs for the menu options, but for right now my loop catches that potential issue. 
+
+As we ask the user for more input and create more complex scripts, the need for error handling grows. Without good error handling, the script and program won’t be as robust as it could be. 
+
+## Summary
+
+In this document we covered how to pickle a file and how to work with error handling. Pickling allows for data to be read, written, and appended to binary file or a text file. 
+In order to help improve robustness of programs, error handling is important. Error handling lets us deal with bad inputs to the user or prevent the program from ending early due to other issues such as files not existing. Python has several built-it error handling exceptions, but we also learn how to create custom error exceptions. All the information reviewed in this document will help limit the number of issues a user might run into. 
+
+THANKS FOR READING!
 
